@@ -1,0 +1,14 @@
+{
+  "name": "s1rc0-nginx",
+  "version": "0.1.0",
+  "author": "s1rc0",
+  "summary": null,
+  "license": "Apache 2.0",
+  "source": "https://github.com/s1rc0/puppet-nginx.git",
+  "project_page": "https://github.com/s1rc0/puppet-nginx",
+  "issues_url": "https://github.com/s1rc0/puppet-nginx/issues",
+  "dependencies": [
+    {"version_requirement":">= 1.0.0","name":"puppetlabs-stdlib"}
+  ]
+}
+
