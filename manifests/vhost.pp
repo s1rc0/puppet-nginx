@@ -16,4 +16,5 @@ define nginx::vhost(
     require => Class['nginx::install'],
     notify => Class['nginx::service'],
   }
+
 }
