@@ -3,7 +3,7 @@ define nginx::vhost(
   $port,
   $ssl=false,
   $priority,
-  $server_name = '',
+  $server_name,
   $template='nginx/vhost.conf.erb',
 ){
   include nginx
