@@ -2,6 +2,7 @@ define nginx::vhost(
   $docroot,
   $port,
   $ssl=false,
+  $priority,
   $serveraliases = '',
   $template='nginx/vhost.conf.erb',
 ){
