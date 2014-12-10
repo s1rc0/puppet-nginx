@@ -1,7 +1,7 @@
 server {
     listen <%= @port %>;
     <%if @server_name.is_a? Array -%>
-        <% @server_name.each do |name| -%><%= "server_name #{@name};\n" %><% end
+    <% @server_name.each do |server_name| -%><%= "server_name #{@server_name};\n" %><% end
     -%>
     <% elsif @server_name != '' -%>
         <%= "server_name #{@name};" -%>
