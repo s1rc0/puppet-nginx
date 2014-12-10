@@ -1,10 +1,10 @@
 server {
     listen <%= @port %>;
     <%if @name.is_a? Array -%>
-        <% @name.each do |name| -%><%= "server_alias #{@name};\n" %><% end
+        <% @name.each do |name| -%><%= "server_name #{@name};\n" %><% end
     -%>
     <% elsif @name != '' -%>
-        <%= "server_alias #{@name};" -%>
+        <%= "server_name #{@name};" -%>
     <% end -%>
 
     root <%= @docroot %>;
