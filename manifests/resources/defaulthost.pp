@@ -1,4 +1,4 @@
-define nginx::resources::default(
+define nginx::resources::defaulthost(
   $port           = 80,
   $template       = 'nginx/default.conf.erb',
   $nx_allowed_ip  = 'localhost',
