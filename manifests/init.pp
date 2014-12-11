@@ -50,8 +50,9 @@ node 'puppetclient.local' {
 
 class nginx {
   include nginx::install
-  include nginx::resources::defaulthost
   include nginx::service
+
+  create_resources('::nginx::resource::defaulthost')
 
   file { '/etc/nginx/conf.d':
     ensure  => directory,
