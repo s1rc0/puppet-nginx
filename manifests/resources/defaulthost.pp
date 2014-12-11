@@ -1,7 +1,7 @@
 define nginx::resources::defaulthost (
   $port           = 80,
   $template       = 'nginx/default.conf.erb',
-  $nx_allowed_ip  = 'localhost',
+  $nx_allowed_ip  = '127.0.0.1',
   $fastcgi_pass   = '127.0.0.1:9000',
 ){
   include nginx
