@@ -35,7 +35,7 @@ This module manages NGINX configuration.
   gzip_comp_level       =>'5',
   gzip_buffers          =>'16 8k',
   gzip_http_version     =>'1.1',
-  gzip_types            =>'application/vnd.ms-fontobject application/x-font-ttf font/opentype text/plain text/css appli$
+  gzip_types            =>'application/vnd.ms-fontobject application/x-font-ttf font/opentype text/plain text/css,
   send_timeout          =>'3400',
   proxy_read_timeout    =>'3400',
   }
