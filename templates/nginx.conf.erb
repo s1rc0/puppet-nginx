@@ -28,26 +28,40 @@ http {
         default off;
         https on;
     }
-
+<% if @keepalive_timeout -%>
     keepalive_timeout  <%= @keepalive_timeout %>;
-
+<% end -%>
+<% if @gzip -%>
     gzip                <%= @gzip %>;
+<% end -%>
+<% if @gzip_disable -%>
     gzip_disable        <%= @gzip_disable %>;
+<% end -%>
+<% if @gzip_vary -%>
     gzip_vary           <%= @gzip_vary %>;
+<% end -%>
+<% if @gzip_proxied -%>
     gzip_proxied        <%= @gzip_proxied %>;
+<% end -%>
+<% if @gzip_comp_level -%>
     gzip_comp_level     <%= @gzip_comp_level %>;
+<% end -%>
+<% if @gzip_buffers -%>
     gzip_buffers        <%= @gzip_buffers %>;
-
+<% end -%>
 <% if @gzip_http_version -%>
-    gzip_http_version          <%= @gzip_http_version %>;
+    gzip_http_version<%= @gzip_http_version %>;
+<% end -%>
+<% if @gzip_types -%>
+    gzip_types          <%= @gzip_types %>;
 <% end -%>
 
-
-    gzip_types          <%= @gzip_types %>;
-
+<% if @send_timeout -%>
     send_timeout        <%= @send_timeout %>;
+<% end -%>
+<% if @proxy_read_timeout -%>
     proxy_read_timeout  <%= @proxy_read_timeout %>;
-
+<% end -%>
     include /etc/nginx/conf.d/*.conf;
     include /etc/nginx/sites-enabled/*;
 
