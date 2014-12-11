@@ -51,14 +51,7 @@ node 'puppetclient.local' {
 class nginx {
   include nginx::install
   include nginx::service
-
-  $default_params = [ {
-  port           => 80,
-  template       => 'nginx/default.conf.erb',
-  nx_allowed_ip  => 'localhost',
-  fastcgi_pass   => '127.0.0.1:9000',
-  }]
-  create_resources('nginx::resource::defaulthost', $default_params )
+  include nginx::resources::defaulthost
 
   file { '/etc/nginx/conf.d':
     ensure  => directory,
