@@ -38,7 +38,6 @@ node 'puppetclinet.local' {
 class nginx {
   include nginx::install
   include nginx::service
-  include nginx::resources::defaulthost
 
   file { '/etc/nginx/conf.d':
     ensure  => directory,
