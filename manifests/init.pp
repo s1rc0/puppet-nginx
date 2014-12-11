@@ -28,11 +28,21 @@ node 'puppetclient.local' {
  }
 
   nginx::resources::vhost { 'www.example.com.conf':
-    port => '80',
-    docroot => '/var/www/www.example.com',
-    ssl => false,
-    priority => '10',
-    server_name => 'example.com www.example.com',
+    port                => '80',
+    docroot             => '/var/www/www.example.com',
+    ssl                 => false,
+    priority            => '10',
+    server_name         => 'example.com www.example.com',
+  }
+
+  nginx::resources::magento { 'shopnow.com.ua.conf':
+    port                => '80',
+    docroot             => '/var/www/www.example.com',
+    ssl                 => false,
+    priority            => '10',
+    server_name         => 'shopnow.com.ua *.shopnow.com.ua',
+    auth_basic_user_file => '/var/www/htpsswd',
+    fastcgi_pass        => 'unix:/var/run/php-fpm.sock',
   }
 
 }

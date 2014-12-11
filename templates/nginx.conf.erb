@@ -37,7 +37,12 @@ http {
     gzip_proxied        <%= @gzip_proxied %>;
     gzip_comp_level     <%= @gzip_comp_level %>;
     gzip_buffers        <%= @gzip_buffers %>;
-    gzip_http_version   <%= @gzip_http_version %>;
+
+<% if @gzip_http_version -%>
+    gzip_http_version          <%= @gzip_http_version %>;
+<% end -%>
+
+
     gzip_types          <%= @gzip_types %>;
 
     send_timeout        <%= @send_timeout %>;
