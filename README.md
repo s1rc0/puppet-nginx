@@ -1,4 +1,4 @@
-# NGINX Module for CentOS 5/6/7
+# Puppet NGINX Module for CentOS 5/6/7
 
 * Sergey Postument <segrey.postument@gmail.com>
 
