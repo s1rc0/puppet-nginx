@@ -1,4 +1,4 @@
-define nginx::vhost(
+define nginx::resources::vhost(
   $docroot,
   $port,
   $ssl=false,

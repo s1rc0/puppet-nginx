@@ -1,46 +1,46 @@
-user  nginx;
-worker_processes  24;
+user  <%= @user %>;
+worker_processes  <%= @worker_processes %>;
 
-error_log  /var/log/nginx/error.log warn;
-pid        /var/run/nginx.pid;
+error_log  <%= @error_log %>;
+pid        <%= @pid %>;
 
 events {
-    worker_connections  1024;
+    worker_connections  <%= @worker_connection %>;
 }
 
 
 http {
 include       /etc/nginx/mime.types;
-default_type  application/octet-stream;
+default_type  <%= @default_type %>;
 
 log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-'$status $body_bytes_sent "$http_referer" '
-'"$http_user_agent" "$http_x_forwarded_for"';
+                    '$status $body_bytes_sent "$http_referer" '
+                    '"$http_user_agent" "$http_x_forwarded_for"';
 
-access_log  /var/log/nginx/access.log  main;
-client_max_body_size 2048M;
-sendfile        on;
-autoindex off;
-#tcp_nopush     on;
+access_log              <%= @access_log %>;
+client_max_body_size    <%= @client_max_body_size %>;
+sendfile                <%= @sendfile %>;
+autoindex               <%= @autoindex %>;
+#tcp_nopush             <%= @tcp_nopush %>;
 
 map $scheme $fastcgi_https {
-default off;
-https on;
+    default off;
+    https on;
 }
 
-keepalive_timeout  10;
+keepalive_timeout  <%= @keepalive_timeout %>;
 
-gzip  on;
-gzip_disable “msie6”;
-gzip_vary on;
-gzip_proxied any;
-gzip_comp_level 5;
-gzip_buffers 16 8k;
-gzip_http_version 1.1;
-gzip_types application/vnd.ms-fontobject application/x-font-ttf font/opentype text/plain text/css application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+gzip                <%= @gzip %>;
+gzip_disable        <%= @gzip_disable %>;
+gzip_vary           <%= @gzip_vary %>;
+gzip_proxied        <%= @gzip_proxied %>;
+gzip_comp_level     <%= @gzip_comp_level %>;
+gzip_buffers        <%= @gzip_buffers %>;
+gzip_http_version   <%= @gzip_http_version %>;
+gzip_types          <%= @gzip_types %>;
 
-send_timeout 3600; ## 1 час
-proxy_read_timeout 3600; ## 1 час
+send_timeout        <%= @send_timeout %>;
+proxy_read_timeout  <%= @proxy_read_timeout %>;
 
 include /etc/nginx/conf.d/*.conf;
 include /etc/nginx/sites-enabled/*;
