@@ -14,7 +14,7 @@ define nginx::vhost(
     group => 'root',
     mode => '0640',
     require => Class['nginx::install'],
-    notify => Class['nginx::service'],
+    #notify => Class['nginx::service'],
   }
 
 }
