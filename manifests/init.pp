@@ -6,12 +6,12 @@ class { 'nginx': }
 
 
 
- apache::vhost { 'www.example.com':
+ nginx::vhost { 'www.example.com':
  port => '80',
  docroot => '/var/www/www.example.com',
  ssl => false,
  priority => '10',
- serveraliases => 'home.example.com',
+ server_name => 'home.example.com',
  }
 
 }
