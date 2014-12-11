@@ -9,7 +9,7 @@ define nginx::resources::wordpress(
 ){
   include nginx
 
-  file {"/etc/nginx/vhosts/${name}.conf":
+  file {"/etc/nginx/vhosts/wp-${name}":
     content => template($template),
     owner => 'root',
     group => 'root',

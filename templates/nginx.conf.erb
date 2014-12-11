@@ -73,7 +73,8 @@ http {
     proxy_read_timeout          <%= @proxy_read_timeout %>;
 <% end -%>
 
-    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/conf.d/*;
+    include /etc/nginx/additional/*;
 }
 
 ### MANAGED BY PUPPET ###

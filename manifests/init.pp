@@ -52,4 +52,18 @@ class nginx {
     purge   => true,
     recurse => true,
   }
+
+  file { '/etc/nginx/ssl':
+    ensure  => directory,
+    force   => true,
+    purge   => true,
+    recurse => true,
+  }
+
+  file { '/etc/nginx/additional':
+    ensure  => directory,
+    force   => true,
+    purge   => true,
+    recurse => true,
+  }
 }
