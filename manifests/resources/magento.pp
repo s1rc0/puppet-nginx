@@ -1,4 +1,4 @@
-define nginx::resources::magento-wl(
+define nginx::resources::magento(
   $docroot,
   $port,
   $ssl=false,
