@@ -1,9 +1,9 @@
 ### MANAGED BY PUPPET ###
 
 server {
-    listen <%= @s %>;
-    server_name <%= @s %>;
-    root <%= @s %>;
+    listen <%= @port %>;
+    server_name <%= @server_name %>;
+    root <%= @name %>;
 
     location / {
         index index.html index.php;
@@ -21,7 +21,7 @@ server {
 
     location /var/export/ {
         auth_basic           "Restricted";
-        auth_basic_user_file <%= @s %>;
+        auth_basic_user_file <%= @auth_basic_user_file %>;
         autoindex            on;
     }
 
@@ -41,7 +41,7 @@ server {
         if (!-e $request_filename) { rewrite / /index.php last; }
 
         expires        off;
-        fastcgi_pass   <%= @s %>;
+        fastcgi_pass   <%= @fastcgi_pass %>;
         fastcgi_param  HTTPS $fastcgi_https;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
         #fastcgi_param  MAGE_RUN_CODE default;
