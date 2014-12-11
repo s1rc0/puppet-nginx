@@ -1,4 +1,4 @@
-define nginx::resources::defaulthost(
+define nginx::resources::defaulthost (
   $port           = 80,
   $template       = 'nginx/default.conf.erb',
   $nx_allowed_ip  = 'localhost',
@@ -7,10 +7,10 @@ define nginx::resources::defaulthost(
   include nginx
 
   file {"/etc/nginx/conf.d/default.conf":
-    content => template($template),
+    content => template("$template"),
     owner => 'root',
     group => 'root',
-    mode => '0640',
+    mode => '0644',
     require => Class['nginx::install'],
     notify => Class['nginx::service'],
   }
