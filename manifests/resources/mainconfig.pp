@@ -11,7 +11,7 @@ define nginx::resources::mainconfig(
   $autoindex,             # off
   $tcp_nopush,            # on
   $keepalive_timeout,     # 60
-  $gzip,                  # on
+  #$gzip,                  # on
   $gzip_disable,          # "msie6"
   $gzip_vary,             # on
   $gzip_proxied,          # any
