@@ -62,9 +62,8 @@ http {
 <% if @proxy_read_timeout -%>
     proxy_read_timeout  <%= @proxy_read_timeout %>;
 <% end -%>
-    include /etc/nginx/conf.d/*.conf;
-    include /etc/nginx/sites-enabled/*;
 
+    include /etc/nginx/conf.d/*.conf;
 }
 
 ### MANAGED BY PUPPET ###

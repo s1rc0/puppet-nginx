@@ -6,7 +6,7 @@ define nginx::resources::mainconfig(
   $worker_connection      = 1024,
   $default_type           = 'application/octet-stream',
   $access_log             = '/var/log/nginx/access.log  main',
-  $client_max_body_size   = '128M',
+  $client_max_body_size   = '12M',
   $sendfile               = 'on',
   $autoindex              = 'off',
   $tcp_nopush             = 'on',
