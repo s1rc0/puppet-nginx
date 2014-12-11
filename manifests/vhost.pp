@@ -8,13 +8,13 @@ define nginx::vhost(
 ){
   include nginx
 
-  file {"/etіc/nginx/conf.d/${name}":
+  file {"/etc/nginx/conf.d/${name}":
     content => template($template),
     owner => 'root',
     group => 'root',
     mode => '0640',
     require => Class['nginx::install'],
-    #notify => Class['nginx::service'],
+    notify => Class['nginx::service'],
   }
 
 }
