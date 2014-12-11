@@ -2,6 +2,9 @@
 example of use
 node '' {
 
+class { 'nginx': }
+
+
 
  apache::vhost { 'www.example.com':
  port => '80',
@@ -15,7 +18,6 @@ node '' {
 */
 
 class nginx {
-  include nginx::redhat
-  #include nginx::install
+  include nginx::install
   #include nginx::service
 }
