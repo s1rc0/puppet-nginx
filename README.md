@@ -14,8 +14,8 @@ This module manages NGINX configuration.
 ### Install and bootstrap an NGINX instance
 
 ```puppet
-  nginx::resources::defaulthost {'/etc/nginx/conf.d/default.conf': port => 80,}
-  nginx::resources::mainconfig { '/etc/nginx/nginx.conf':
+nginx::resources::defaulthost {'/etc/nginx/conf.d/default.conf': port => 80,}
+nginx::resources::mainconfig { '/etc/nginx/nginx.conf':
   user                  =>'nginx',
   worker_processes      =>'4',
   error_log             =>'/var/log/nginx/error.log warn',
@@ -36,9 +36,9 @@ This module manages NGINX configuration.
   gzip_buffers          =>'16 8k',
   gzip_http_version     =>'1.1',
   gzip_types            =>'application/vnd.ms-fontobject application/x-font-ttf font/opentype text/plain text/css',
-  send_timeout          =>'3400',
-  proxy_read_timeout    =>'3400',
-  }
+  send_timeout          =>'3600',
+  proxy_read_timeout    =>'3600',
+}
 ```
 
 ### Setup a new virtual host ( for magento site)
