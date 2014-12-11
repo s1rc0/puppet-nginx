@@ -44,5 +44,17 @@ This module manages NGINX configuration.
 ### Setup a new virtual host ( for magento site)
 
 ```puppet
+nginx::resources::wordpress { 'example.com': }
+```
+
+### Setup a new virtual host ( for drupal site)
+
+```puppet
+nginx::resources::wordpress { 'example.com': }
+```
+
+### Setup a new virtual host ( for magento site)
+
+```puppet
 nginx::resources::magento { 'example.com': }
 ```
