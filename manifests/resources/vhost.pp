@@ -8,7 +8,7 @@ define nginx::resources::vhost(
 ){
   include nginx
 
-  file {"/etc/nginx/conf.d/${name}":
+  file {"/etc/nginx/vhosts/${name}":
     content => template($template),
     owner => 'root',
     group => 'root',

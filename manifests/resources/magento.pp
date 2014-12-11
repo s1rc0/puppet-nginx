@@ -8,7 +8,7 @@ define nginx::resources::magento(
 ){
   include nginx
 
-  file {"/etc/nginx/conf.d/${name}.conf":
+  file {"/etc/nginx/vhosts/${name}.conf":
     content => template($template),
     owner => 'root',
     group => 'root',
