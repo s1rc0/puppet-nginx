@@ -17,7 +17,7 @@ define nginx::resources::mainconfig(
   $gzip_proxied,          # any
   $gzip_comp_level,       # 5
   $gzip_buffers,          # 16 8k
-  #$gzip_http_version,     # 1.1
+  $gzip_http_version,     # 1.1
   $gzip_types,            # application/vnd.ms-fontobject application/x-font-ttf font/opentype text/plain text/css application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript
   $send_timeout,          # 3600
   $proxy_read_timeout,    # 3600
