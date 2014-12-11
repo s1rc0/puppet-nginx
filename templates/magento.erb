@@ -1,9 +1,14 @@
 ### MANAGED BY PUPPET ###
 
 server {
+
+<% if @listen -%>
     listen <%= @port %>;
+<% end -%>
     server_name <%= @server_name %>;
-    root <%= @name %>;
+<% if @listen -%>
+    root <%= @docroot %>;
+<% end -%>
 
     location / {
         index index.html index.php;
