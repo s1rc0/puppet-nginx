@@ -11,6 +11,7 @@ events {
 }
 
 http {
+
     include       /etc/nginx/mime.types;
     default_type  <%= @default_type %>;
 
@@ -18,19 +19,19 @@ http {
                         '$status $body_bytes_sent "$http_referer" '
                         '"$http_user_agent" "$http_x_forwarded_for"';
 
-    access_log              <%= @access_log %>;
+    access_log                  <%= @access_log %>;
 
 <% if @client_max_body_size -%>
-    client_max_body_size    <%= @client_max_body_size %>;
+    client_max_body_size        <%= @client_max_body_size %>;
 <% end -%>
 <% if @sendfile -%>
-    sendfile                <%= @sendfile %>;
+    sendfile                    <%= @sendfile %>;
 <% end -%>
 <% if @autoindex -%>
-    autoindex               <%= @autoindex %>;
+    autoindex                   <%= @autoindex %>;
 <% end -%>
 <% if @tcp_nopush -%>
-    tcp_nopush             <%= @tcp_nopush %>;
+    tcp_nopush                  <%= @tcp_nopush %>;
 <% end -%>
 
     map $scheme $fastcgi_https {
@@ -41,35 +42,35 @@ http {
     keepalive_timeout  <%= @keepalive_timeout %>;
 <% end -%>
 <% if @gzip -%>
-    gzip                <%= @gzip %>;
+    gzip                        <%= @gzip %>;
 <% end -%>
 <% if @gzip_disable -%>
-    gzip_disable        <%= @gzip_disable %>;
+    gzip_disable                <%= @gzip_disable %>;
 <% end -%>
 <% if @gzip_vary -%>
-    gzip_vary           <%= @gzip_vary %>;
+    gzip_vary                   <%= @gzip_vary %>;
 <% end -%>
 <% if @gzip_proxied -%>
-    gzip_proxied        <%= @gzip_proxied %>;
+    gzip_proxied                <%= @gzip_proxied %>;
 <% end -%>
 <% if @gzip_comp_level -%>
-    gzip_comp_level     <%= @gzip_comp_level %>;
+    gzip_comp_level             <%= @gzip_comp_level %>;
 <% end -%>
 <% if @gzip_buffers -%>
-    gzip_buffers        <%= @gzip_buffers %>;
+    gzip_buffers                <%= @gzip_buffers %>;
 <% end -%>
 <% if @gzip_http_version -%>
-    gzip_http_version   <%= @gzip_http_version %>;
+    gzip_http_version           <%= @gzip_http_version %>;
 <% end -%>
 <% if @gzip_types -%>
-    gzip_types          <%= @gzip_types %>;
+    gzip_types                  <%= @gzip_types %>;
 <% end -%>
 
 <% if @send_timeout -%>
-    send_timeout        <%= @send_timeout %>;
+    send_timeout                <%= @send_timeout %>;
 <% end -%>
 <% if @proxy_read_timeout -%>
-    proxy_read_timeout  <%= @proxy_read_timeout %>;
+    proxy_read_timeout          <%= @proxy_read_timeout %>;
 <% end -%>
 
     include /etc/nginx/conf.d/*.conf;

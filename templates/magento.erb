@@ -1,10 +1,10 @@
 ### MANAGED BY PUPPET ###
 
 server {
+
     listen <%= @port %>;
     server_name <%= @server_name %>;
     root <%= @docroot %>;
-
 
     location / {
         index index.html index.php;
