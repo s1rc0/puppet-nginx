@@ -51,4 +51,18 @@ node 'puppetclient.local' {
 class nginx {
   include nginx::install
   include nginx::service
+
+  file { '/etc/nginx/conf.d':
+    ensure  => directory,
+    force   => true,
+    purge   => true,
+    recurse => true,
+  }
+
+  file { '/etc/nginx/vhosts':
+    ensure  => directory,
+    force   => true,
+    purge   => true,
+    recurse => true,
+  }
 }
