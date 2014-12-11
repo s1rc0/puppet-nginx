@@ -6,7 +6,7 @@ define nginx::resources::magento-wl(
   $server_name,
   $auth_basic_user_file,
   $fastcgi_pass,
-  $template='nginx/magento-wl.erb',
+  $template='nginx/magento.erb',
 ){
   include nginx
 
