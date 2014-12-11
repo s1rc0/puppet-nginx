@@ -1,6 +1,6 @@
 /*
 example of use
-node 'puppetclient.local' {
+node 'puppetclinet.local' {
 
  nginx::resources::mainconfig { '/etc/nginx/nginx.conf':
   user                  =>'nginx',
@@ -22,35 +22,23 @@ node 'puppetclient.local' {
   gzip_comp_level       =>'5',
   gzip_buffers          =>'16 8k',
   gzip_http_version     =>'1.1',
-  gzip_types            =>'application/vnd.ms-fontobject application/x-font-ttf font/opentype text/plain text/css appl$
-  send_timeout          =>'3600',
-  proxy_read_timeout    =>'3600',
+  gzip_types            =>'application/vnd.ms-fontobject application/x-font-ttf font/opentype text/plain text/css appli$
+  send_timeout          =>'3400',
+  proxy_read_timeout    =>'3400',
  }
 
-  nginx::resources::vhost { 'www.example.com.conf':
-    port                => '80',
-    docroot             => '/var/www/www.example.com',
-    ssl                 => false,
-    priority            => '10',
-    server_name         => 'example.com www.example.com',
-  }
 
-  nginx::resources::magento { 'shopnow.com.ua.conf':
-    port                => '80',
-    docroot             => '/var/www/www.example.com',
-    ssl                 => false,
-    priority            => '10',
-    server_name         => 'shopnow.com.ua *.shopnow.com.ua',
-    auth_basic_user_file => '/var/www/htpsswd',
-    fastcgi_pass        => 'unix:/var/run/php-fpm.sock',
-  }
+  nginx::resources::magento { 'example.com.ua': }
+  nginx::resources::defaulthost {'/etc/nginx/conf.d/default.conf': port => 80,}
 
-}
+
+
 */
 
 class nginx {
   include nginx::install
   include nginx::service
+  include nginx::resources::defaulthost
 
   file { '/etc/nginx/conf.d':
     ensure  => directory,
