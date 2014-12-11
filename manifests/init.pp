@@ -50,6 +50,7 @@ node 'puppetclient.local' {
 
 class nginx {
   include nginx::install
+  include nginx::resources::default
   include nginx::service
 
   file { '/etc/nginx/conf.d':

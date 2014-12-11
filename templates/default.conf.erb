@@ -1,0 +1,19 @@
+server {
+  listen <%= @port %>;
+  server_name  _ "";
+  access_log /dev/null;
+  error_log /dev/null;
+
+  location = /nginx-stats {
+    stub_status on;
+    access_log off;
+    allow <%= @nx_allowed_ip %>;
+    deny all;
+  }
+
+  location /php-fpm_status {
+    fastcgi_pass <%= @fastcgi_pass %>;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+  }
+}
